@@ -1,19 +1,19 @@
 import './App.css'
 
 
-function Header(props) {
+function Header({name}) {
   return (
     <header>
-      <h1>{props.name}'s Kitchen</h1>
+      <h1>{name}'s Kitchen</h1>
     </header>
   )
 }
 
-function Footer(props) {
+function Footer({year}) {
   return (
-    <header>
-      <p>Copyright {props.year}</p>
-    </header>
+    <footer>
+      <p>Copyright {year}</p>
+    </footer>
   )
 }
 
