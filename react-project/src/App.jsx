@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import chef from "./images/chef.jpg"
 
@@ -48,7 +49,8 @@ function Main({dishes}) {
 }
 
 function App() {
-
+  const [status, setStatus] = useState("Open");
+  console.log(status);
   return (
     <div>
       <Header name="Alex" />
