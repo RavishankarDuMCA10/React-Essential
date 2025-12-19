@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import './App.css'
 import chef from "./images/chef.jpg"
 
@@ -52,11 +52,22 @@ function Main({dishes, openStatus, onStatus}) {
 }
 
 function App() {
-  //const [status, setStatus] = useState(true);
   const [status, toggle] = useReducer(
     (status) => !status,
     true
-  )
+  );
+
+  // Log to console on initial render
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? "open" : "closed"}`)
+  }, []);
+
+  // Log to console when the status changes
+  useEffect(() => {
+    console.log(`The restaurant is ${status ? "open" : "closed"}`)
+  }, [status]);
+
+  
   return (
     <div>
       <h1>The restaurant is currently {status ? "Open" : "Closed"}.</h1>
